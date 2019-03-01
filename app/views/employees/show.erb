@@ -1,0 +1,17 @@
+<h1><%= @employee.full_name %>'s Page:</h1>
+
+<h2>Basic Info:</h2>
+
+<h3>Alias:</h3><p><%= @employee.alias %></p>
+
+<h3>Title:</h3><p><%= @employee.title %></p>
+
+<h3>Office:</h3><p><%= @employee.office %></p>
+
+<img src="<%= @employee.img_url %>" alt="<%= @employee.full_name %>'s Photo">
+<br><br>
+<%= form_for(@employee, :method => :delete, data: { confirm: "Really?" } ) do |f| %>
+<%= f.submit value: "Delete" %>
+<% end %><br>
+<%= link_to("Edit Employee", edit_employee_path(@employee)) %><br><br>
+<%= link_to("Back to Index", employees_path) %>

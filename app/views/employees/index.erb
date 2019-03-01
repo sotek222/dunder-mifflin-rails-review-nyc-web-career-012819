@@ -1,0 +1,7 @@
+<h1 style="text-align: center">The Dunder Mifflin Team:</h1>
+
+<ul style="text-align: center" >
+  <% @employees.each do |employee| %>
+  <li style="list-style: none"><%= link_to(employee.full_name, employee_path(employee))%></li><br>
+  <% end %>
+</ul>
